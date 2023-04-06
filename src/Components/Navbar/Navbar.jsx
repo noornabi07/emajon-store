@@ -8,7 +8,7 @@ const Navbar = () => {
             <img src={img} alt="" />
             <div>
                 <Link className='font-bold px-6 hover:text-orange-500' to="/">Home</Link>
-                <Link className='font-bold px-6 hover:text-orange-500' to="/shop">Shop</Link>
+                <Link className='font-bold px-6 hover:text-orange-500' to="/">Shop</Link>
                 <Link className='font-bold px-6 hover:text-orange-500' to="/orders">Orders Review</Link>
                 <Link className='font-bold px-6 hover:text-orange-500' to="/inventory">Inventory</Link>
                 <Link className='font-bold px-6 hover:text-orange-500' to="/login">Login</Link>
