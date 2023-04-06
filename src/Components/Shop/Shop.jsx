@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 
 const Shop = () => {
     const shops = useLoaderData();
@@ -33,6 +33,11 @@ const Shop = () => {
         addToDb(shop.id)
     }
 
+    const handleClearCart = () =>{
+        setCart([])
+        deleteShoppingCart();
+    }
+
 
     // console.log(shops)
     return (
@@ -43,11 +48,19 @@ const Shop = () => {
                         key={shop.id}
                         shop={shop}
                         handleAddToCart={handleAddToCart}
+                        
                     ></Product>)
                 }
             </div>
             <div>
-                <Cart cart={cart}></Cart>
+                <Cart 
+                cart={cart}
+                handleClearCart={handleClearCart}
+                >
+                    <button className='bg-purple-500 w-full text-center py-2 px-4 mt-4'>
+                        <Link to="/orders">Review Orders</Link>
+                    </button>
+                </Cart>
             </div>
         </div>
     );
