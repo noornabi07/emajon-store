@@ -5,7 +5,7 @@ const Product = ({ shop, handleAddToCart }) => {
     const {img, name, price, ratings, seller } = shop;
 
     return (
-        <div className='w-80 border-4 border-gray-300 rounded-lg relative'>
+        <div className='w-64 border-4 border-gray-300 rounded-lg relative'>
             <img className='p-2' src={img} alt="" />
             <div className='ml-3'>
                 <p className='font-bold text-red-600 mt-3'>{name}</p>
